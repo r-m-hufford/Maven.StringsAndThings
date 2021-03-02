@@ -1,6 +1,5 @@
 package io.zipcoder;
 
-
 /**
  * @author tariq
  */
@@ -19,7 +18,7 @@ public class StringsAndThings {
         String[] words = input.split(" ");
         for(String word : words) {
             int n = word.length();
-            if (word.charAt(n - 1) == 'y');
+            if (word.charAt(n - 1) == 'y' || word.charAt(n - 1) == 'z');
             counter += 1;
         }
         return counter;
@@ -49,6 +48,7 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
+        return null;
     }
 
     /**
@@ -59,7 +59,14 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        boolean isHappy = false;
+        for (int i = 0; i < input.length() - 1; i++) {
+            if (input.startsWith("gg", i)) {
+                isHappy = true;
+                break;
+            }
+        }
+        return isHappy;
     }
 
 
@@ -71,6 +78,20 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int counter = 0;
+        char[] letters = input.toCharArray();
+        for (int i = 0; i < letters.length - 1; i++) {
+            if (letters[i] == letters[i+1] && letters[i] == letters[i+2]) {
+                counter++;
+            }
+        }
+        return counter;
     }
 }
+
+        //for (int i = 0; i < input.length() - 1; i++) {
+        //if (input.charAt(i) == input.charAt(i + 1)) {
+        //isHappy = true;
+        //}
+        //}
+        //return isHappy;
